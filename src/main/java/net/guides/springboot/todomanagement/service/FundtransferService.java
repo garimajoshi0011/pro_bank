@@ -1,5 +1,6 @@
 package net.guides.springboot.todomanagement.service;
 
+import net.guides.springboot.todomanagement.model.Account;
 import net.guides.springboot.todomanagement.model.Complaint;
 import net.guides.springboot.todomanagement.model.FundTransfer;
 import net.guides.springboot.todomanagement.repository.FundtransferRepository;
@@ -40,6 +41,12 @@ public class FundTransferService {
 			FundTransfer fundTransfer1 = fundTransfer.get();
 			fundtransferRepository.delete(fundTransfer1);
 		}
+	}
+
+	public FundTransfer getfundTransferById(long id) {
+		Optional<FundTransfer> fundTransfer = fundtransferRepository.findById(id);
+		FundTransfer fundTransfer1 = fundTransfer.get();
+		return fundTransfer1;
 	}
 
 

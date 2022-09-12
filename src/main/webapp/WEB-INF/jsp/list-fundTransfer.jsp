@@ -35,15 +35,18 @@
 
 
 
-							<td>
-							<a type="button" class="btn btn-success"
-                            								href="/approve-fundTransfer?id=${fundTransfer.fundTransferId}">Approve</a>
-							<a type="button" class="btn btn-success" href="/reject-fundTransfer?id=${fundTransfer.fundTransferId}">Reject</a>
+						<td>
+						<a type="button" class="btn btn-success"
+                        href="/approve-fundTransfer?id=${fundTransfer.fundTransferId}">Approve</a>
 
-							<a type="button" class="btn btn-success"
-								href="/update-todo?id=${todo.id}">Update</a>
-							<a type="button" class="btn btn-warning"
-								href="/delete-todo?id=${todo.id}">Delete</a></td>
+						<a type="button" class="btn btn-success"
+						href="/reject-fundTransfer?id=${fundTransfer.fundTransferId}">Reject</a>
+
+						<a type="button" class="btn btn-success"
+						href="/update-fundTransfer?id=${fundTransfer.fundTransferId}">Update</a>
+
+						<a type="button" class="btn btn-warning"
+						href="/delete-fundTransfer?id=${fundTransfer.fundTransferId}">Delete</a></td>
 						</tr>
 					</c:forEach>
 				</tbody>

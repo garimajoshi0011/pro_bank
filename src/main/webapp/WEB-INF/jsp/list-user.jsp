@@ -38,13 +38,16 @@
 							<td>${user.dateofbirth}</td>
 							<td>
 							<a type="button" class="btn btn-success"
-                            								href="/approve-user?id=${user.userId}">Approve</a>
-							<a type="button" class="btn btn-success" href="/reject-user?id=${user.userId}">Reject</a>
+                            href="/approve-user?id=${user.userId}">Approve</a>
 
 							<a type="button" class="btn btn-success"
-								href="/update-todo?id=${todo.id}">Update</a>
+							 href="/reject-user?id=${user.userId}">Reject</a>
+
+							<a type="button" class="btn btn-success"
+								href="/update-user?id=${user.userId}">Update</a>
+
 							<a type="button" class="btn btn-warning"
-								href="/delete-user?id=${user.id}">Delete</a></td>
+								href="/delete-user?id=${user.userId}">Delete</a></td>
 						</tr>
 					</c:forEach>
 				</tbody>

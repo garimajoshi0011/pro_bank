@@ -1,6 +1,7 @@
 package net.guides.springboot.todomanagement.service;
 
 import net.guides.springboot.todomanagement.model.Account;
+import net.guides.springboot.todomanagement.model.Complaint;
 import net.guides.springboot.todomanagement.model.Todo;
 import net.guides.springboot.todomanagement.repository.AccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,5 +41,11 @@ public class AccountService {
 			Account account1 = account.get();
 			accountRepository.delete(account1);
 		}
+	}
+
+	public Account getAccountById(long id) {
+		Optional<Account> account = accountRepository.findById(id);
+		Account account1 = account.get();
+		return account1;
 	}
 }

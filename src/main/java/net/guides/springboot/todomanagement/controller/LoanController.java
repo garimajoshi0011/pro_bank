@@ -1,5 +1,6 @@
 package net.guides.springboot.todomanagement.controller;
 
+import net.guides.springboot.todomanagement.model.FundTransfer;
 import net.guides.springboot.todomanagement.model.Loan;
 import net.guides.springboot.todomanagement.model.User;
 import net.guides.springboot.todomanagement.service.LoanService;
@@ -68,9 +69,21 @@ public class LoanController {
 
 	}
 
+	@RequestMapping(value = "/update-loan", method = RequestMethod.GET)
+	public String updateLoan(@RequestParam long id, ModelMap model) {
+		Loan loan = loanService.getloanById(id);
+		model.put("loanbean", loan);
+		return "loan";
+	}
 
-
-
+	@RequestMapping(value = "/update-loan", method = RequestMethod.POST)
+	public String updateLoan(Loan loan, BindingResult result) {
+		if (result.hasErrors()) {
+			return "loan";
+		}
+		loanService.saveLoan(loan);
+		return "message";
+	}
 
 
 }

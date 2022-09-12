@@ -1,9 +1,6 @@
 package net.guides.springboot.todomanagement.service;
 
-import net.guides.springboot.todomanagement.model.Account;
-import net.guides.springboot.todomanagement.model.Loan;
-import net.guides.springboot.todomanagement.model.Todo;
-import net.guides.springboot.todomanagement.model.User;
+import net.guides.springboot.todomanagement.model.*;
 import net.guides.springboot.todomanagement.repository.LoanRepository;
 import net.guides.springboot.todomanagement.repository.TodoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,4 +43,9 @@ public class LoanService {
 		}
 	}
 
+	public Loan getloanById(long id) {
+		Optional<Loan> loan = loanRepository.findById(id);
+		Loan loan1 = loan.get();
+		return loan1;
+	}
 }

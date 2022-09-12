@@ -34,11 +34,14 @@
 							<td>${complaint.status}</td>
 							<td>
 							<a type="button" class="btn btn-success"
-                            								href="/approve-complaint?id=${complaint.complaintId}">Approve</a>
-							<a type="button" class="btn btn-success" href="/reject-complaint?id=${complaint.complaintId}">Reject</a>
+                            	href="/approve-complaint?id=${complaint.complaintId}">Approve</a>
+
+							<a type="button" class="btn btn-success"
+							href="/reject-complaint?id=${complaint.complaintId}">Reject</a>
 
 							<a type="button" class="btn btn-success"
 								href="/update-complaint?id=${complaint.complaintId}">Update</a>
+
 							<a type="button" class="btn btn-warning"
 								href="/delete-complaint?id=${complaint.complaintId}">Delete</a></td>
 						</tr>

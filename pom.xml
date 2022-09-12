@@ -5,12 +5,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>net.guides.springboot</groupId>
-    <artifactId>pro-banking</artifactId>
+    <artifactId>todo-management-spring-boot</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>todo-management-spring-boot</name>
-    <description>Banking Application</description>
+    <description>Demo project for Spring Boot</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>

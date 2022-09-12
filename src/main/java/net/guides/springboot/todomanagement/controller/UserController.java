@@ -1,5 +1,6 @@
 package net.guides.springboot.todomanagement.controller;
 
+import net.guides.springboot.todomanagement.model.Loan;
 import net.guides.springboot.todomanagement.model.Todo;
 import net.guides.springboot.todomanagement.model.User;
 import net.guides.springboot.todomanagement.service.ITodoService;
@@ -93,5 +94,22 @@ public class UserController {
 		// service.deleteTodo(id);
 		return "redirect:/list-user";
 	}
+
+	@RequestMapping(value = "/update-user", method = RequestMethod.GET)
+	public String updateUser(@RequestParam long id, ModelMap model) {
+		User user = userService.getUserById(id);
+		model.put("userbean", user);
+		return "user";
 	}
+
+	@RequestMapping(value = "/update-user", method = RequestMethod.POST)
+	public String updateUser(User user, BindingResult result) {
+		if (result.hasErrors()) {
+			return "user";
+		}
+		userService.saveUser(user);
+		return "message";
+	}
+
+}
 

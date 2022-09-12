@@ -1,5 +1,6 @@
 package net.guides.springboot.todomanagement.service;
 import net.guides.springboot.todomanagement.model.Account;
+import net.guides.springboot.todomanagement.model.Loan;
 import net.guides.springboot.todomanagement.model.Todo;
 import net.guides.springboot.todomanagement.model.User;
 import net.guides.springboot.todomanagement.repository.UserRepository;
@@ -41,6 +42,12 @@ public class UserService {
 			User user1 = user.get();
 			userRepository.delete(user1);
 		}
+	}
+
+	public User getUserById(long id) {
+		Optional<User> user = userRepository.findById(id);
+		User user1 = user.get();
+		return user1;
 	}
 
 

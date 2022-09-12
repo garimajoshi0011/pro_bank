@@ -1,6 +1,7 @@
 package net.guides.springboot.todomanagement.controller;
 
 import net.guides.springboot.todomanagement.model.Account;
+import net.guides.springboot.todomanagement.model.Complaint;
 import net.guides.springboot.todomanagement.model.Loan;
 import net.guides.springboot.todomanagement.service.AccountService;
 import net.guides.springboot.todomanagement.util.Status;
@@ -62,6 +63,22 @@ public class AccountController {
         accountService.deleteAccount(id);
         // service.deleteTodo(id);
         return "redirect:/list-account";
+    }
+
+    @RequestMapping(value = "/update-account", method = RequestMethod.GET)
+    public String updateAccount(@RequestParam long id, ModelMap model) {
+        Account account = accountService.getAccountById(id);
+        model.put("accountbean", account);
+        return "account";
+    }
+
+    @RequestMapping(value = "/update-account", method = RequestMethod.POST)
+    public String updateAccount(Account account, BindingResult result) {
+        if (result.hasErrors()) {
+            return "account";
+        }
+        accountService.saveAccount(account);
+        return "message";
     }
 
 }

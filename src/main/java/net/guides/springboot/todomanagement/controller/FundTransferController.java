@@ -1,5 +1,6 @@
 package net.guides.springboot.todomanagement.controller;
 
+import net.guides.springboot.todomanagement.model.Account;
 import net.guides.springboot.todomanagement.model.FundTransfer;
 import net.guides.springboot.todomanagement.model.User;
 import net.guides.springboot.todomanagement.service.FundTransferService;
@@ -62,5 +63,22 @@ public class FundTransferController {
 		return "redirect:/ist-fundTransfer";
 
 	}
+
+	@RequestMapping(value = "/update-fundTransfer", method = RequestMethod.GET)
+	public String updateFundTransfer(@RequestParam long id, ModelMap model) {
+		FundTransfer fundTransfer = fundtransferService.getfundTransferById(id);
+		model.put("fundTransferbean", fundTransfer);
+		return "fundTransfer";
+	}
+
+	@RequestMapping(value = "/update-fundTransfer", method = RequestMethod.POST)
+	public String updateFundTransfer(FundTransfer fundTransfer, BindingResult result) {
+		if (result.hasErrors()) {
+			return "fundTransfer";
+		}
+		fundtransferService.saveFundTransfer(fundTransfer);
+		return "message";
+	}
+
 
 }

@@ -47,13 +47,16 @@
 
 							<td>
 							<a type="button" class="btn btn-success"
-                            								href="/approve-loan?id=${loan.loanId}">Approve</a>
-							<a type="button" class="btn btn-success" href="/reject-loan?id=${loan.loanId}">Reject</a>
+                            href="/approve-loan?id=${loan.loanId}">Approve</a>
 
 							<a type="button" class="btn btn-success"
-								href="/update-todo?id=${todo.id}">Update</a>
+							href="/reject-loan?id=${loan.loanId}">Reject</a>
+
+							<a type="button" class="btn btn-success"
+								href="/update-loan?id=${loan.loanId}">Update</a>
+
 							<a type="button" class="btn btn-warning"
-								href="/delete-todo?id=${todo.id}">Delete</a></td>
+								href="/delete-loan?id=${loan.loanId}">Delete</a></td>
 						</tr>
 					</c:forEach>
 				</tbody>

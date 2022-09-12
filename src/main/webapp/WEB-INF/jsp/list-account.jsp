@@ -28,11 +28,13 @@
 							<td>${account.status}</td>
 							<td>
 							<a type="button" class="btn btn-success"
-                            								href="/approve-account?id=${account.accountId}">Approve</a>
-							<a type="button" class="btn btn-success" href="/reject-account?id=${account.accountId}">Reject</a>
+                            href="/approve-account?id=${account.accountId}">Approve</a>
 
 							<a type="button" class="btn btn-success"
-								href="/update-todo?id=${todo.id}">Update</a>
+							 href="/reject-account?id=${account.accountId}">Reject</a>
+
+							<a type="button" class="btn btn-success"
+								href="/update-account?id=${account.accountId}">Update</a>
 							<a type="button" class="btn btn-warning"
 								href="/delete-account?id=${account.accountId}">Delete</a></td>
 						</tr>
