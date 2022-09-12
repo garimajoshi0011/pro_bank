@@ -24,7 +24,7 @@
 
                         <fieldset class="form-group">
                              <form:label path="date">Date</form:label>
-                             <form:input path="date" type="text" class="form-control"
+                             <form:input path="date" type="date" class="form-control"
                                  required="required" />
                         <form:errors path="date" cssClass="text-warning" />
                                     </fieldset>
@@ -45,30 +45,6 @@
                                      required="required" />
                                <form:errors path="amount" cssClass="text-warning" />
                                        </fieldset>
-<fieldset class="form-group">
-                            <form:label path="creditAccountNumber">CreditAccountNumber</form:label>
-                        						<form:input path="creditAccountNumber" type="text" class="form-control"
-                        							required="required" />
-                        						<form:errors path="creditAccountNumber" cssClass="text-warning" />
-                        						</fieldset>
-
-                        <fieldset class="form-group">
-                             <form:label path="date">Date</form:label>
-                             <form:input path="date" type="text" class="form-control"
-                                 required="required" />
-                        <form:errors path="date" cssClass="text-warning" />
-                                    </fieldset>
-
-                      <fieldset class="form-group">
-                              <form:label path="balance">Balance</form:label>
-                              <form:input path="balance" type="text" class="form-control"
-                                   required="required" />
-                              <form:errors path="balance" cssClass="text-warning" />
-                                  </fieldset>
-
-
-
-
 
 
 						<button type="submit" class="btn btn-success">Save</button>

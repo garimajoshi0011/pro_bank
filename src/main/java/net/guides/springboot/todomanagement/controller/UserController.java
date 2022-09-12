@@ -3,6 +3,8 @@ package net.guides.springboot.todomanagement.controller;
 import net.guides.springboot.todomanagement.model.Todo;
 import net.guides.springboot.todomanagement.model.User;
 import net.guides.springboot.todomanagement.service.ITodoService;
+import net.guides.springboot.todomanagement.service.UserService;
+import net.guides.springboot.todomanagement.util.Status;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -22,7 +24,7 @@ import java.util.Date;
 @Controller
 public class UserController {
 	@Autowired()
-	private ITodoService todoService;
+	private UserService userService;
 
 	@InitBinder
 	public void initBinder(WebDataBinder binder) {
@@ -31,12 +33,12 @@ public class UserController {
 		binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, false));
 	}
 
-	@RequestMapping(value = "/list-user", method = RequestMethod.GET)
+	/*@RequestMapping(value = "/list-user", method = RequestMethod.GET)
 	public String showTodos(ModelMap model) {
 		String name = getLoggedInUserName(model);
 		// model.put("todos", service.retrieveTodos(name));
 		return "user";
-	}
+	}*/
 
 
 	private String getLoggedInUserName(ModelMap model) {
@@ -55,41 +57,41 @@ public class UserController {
 		return "user";
 	}
 
-	@RequestMapping(value = "/delete-user", method = RequestMethod.GET)
-	public String deleteTodo(@RequestParam long id) {
-		todoService.deleteTodo(id);
-		// service.deleteTodo(id);
-		return "redirect:/list-todos";
-	}
-
-	@RequestMapping(value = "/update-user", method = RequestMethod.GET)
-	public String showUpdateTodoPage(@RequestParam long id, ModelMap model) {
-		Todo todo = todoService.getTodoById(id).get();
-		model.put("todo", todo);
-		return "todo";
-	}
-
-	@RequestMapping(value = "/update-user", method = RequestMethod.POST)
-	public String updateTodo(ModelMap model, Todo todo, BindingResult result) {
-
-		if (result.hasErrors()) {
-			return "todo";
-		}
-
-		todo.setUserName(getLoggedInUserName(model));
-		todoService.updateTodo(todo);
-		return "redirect:/list-todos";
-	}
-
 	@RequestMapping(value = "/add-user", method = RequestMethod.POST)
-	public String addTodo(ModelMap model, Todo todo, BindingResult result) {
-
+	public String addUser(ModelMap model, User user, BindingResult result) {
 		if (result.hasErrors()) {
-			return "todo";
+			return "user";
 		}
-
-		todo.setUserName(getLoggedInUserName(model));
-		todoService.saveTodo(todo);
-		return "redirect:/list-todos";
+		user.setStatus(Status.INITIATE);
+		userService.saveUser(user);
+		return "message";
 	}
-}
+	@RequestMapping(value = "/list-user", method = RequestMethod.GET)
+	public String showTodos(ModelMap model) {
+		// String name = getLoggedInUserName(model);
+		model.put("users", userService.getUsers());
+		return "list-user";
+	}
+
+	@RequestMapping(value = "/approve-user", method = RequestMethod.GET)
+	public String approveUser(@RequestParam long id) {
+		userService.updateStatus(id, Status.APPROVED);
+		// service.deleteTodo(id);
+		return "redirect:/list-user";
+	}
+
+	@RequestMapping(value = "/reject-user", method = RequestMethod.GET)
+	public String rejectUser(@RequestParam long id) {
+		userService.updateStatus(id, Status.REJECTED);
+		// service.deleteTodo(id);
+		return "redirect:/list-user";
+	}
+
+	@RequestMapping(value = "/delete-user", method = RequestMethod.GET)
+	public String deleteUser(@RequestParam long id) {
+		userService.deleteUser(id);
+		// service.deleteTodo(id);
+		return "redirect:/list-user";
+	}
+	}
+

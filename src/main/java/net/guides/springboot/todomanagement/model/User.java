@@ -15,15 +15,17 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private long customerId;
+    private long userId;
     private String userName;
     private String password;
     private String email;
     private String phoneNumber;
     private String address;
-    private Date dob;
+    private String dob;
     private String nationality;
     private String gender;
     private Date createDate;
     private Date updateDate;
+    private String status;
+
 }

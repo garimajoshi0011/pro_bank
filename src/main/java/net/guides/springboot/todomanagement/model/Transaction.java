@@ -39,4 +39,6 @@ public class Transaction {
     private Date createDate;
     @NonNull
     private Date updateDate;
+    @NonNull
+    private String status;
 }

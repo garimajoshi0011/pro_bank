@@ -16,7 +16,7 @@ public class Loan {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private long customerId;
+    private long loanId;
     @NonNull
     private String loanType;
     @NonNull
@@ -36,11 +36,12 @@ public class Loan {
     @NonNull
     private String profession;
     @NonNull
-    private Date requestDate;
+    private String requestDate;
     @NonNull
     private String status;
     @NonNull
     private Date createDate;
     @NonNull
     private Date updateDate;
+
 }

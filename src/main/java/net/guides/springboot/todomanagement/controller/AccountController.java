@@ -1,40 +1,67 @@
 package net.guides.springboot.todomanagement.controller;
 
-import net.guides.springboot.todomanagement.model.Accounts;
+import net.guides.springboot.todomanagement.model.Account;
 import net.guides.springboot.todomanagement.model.Loan;
-import net.guides.springboot.todomanagement.model.Todo;
-import net.guides.springboot.todomanagement.model.User;
-import net.guides.springboot.todomanagement.service.AccountsService;
-import net.guides.springboot.todomanagement.service.ITodoService;
-import net.guides.springboot.todomanagement.service.LoanService;
+import net.guides.springboot.todomanagement.service.AccountService;
+import net.guides.springboot.todomanagement.util.Status;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.propertyeditors.CustomDateEditor;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.WebDataBinder;
-import org.springframework.web.bind.annotation.InitBinder;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.Objects;
 
 @Controller
 public class AccountController {
-
-
     @Autowired()
-    private AccountsService accountService;
-
+    private AccountService accountService;
 
     @RequestMapping(value = "/account", method = RequestMethod.GET)
     public String showAddTodoPage(ModelMap model) {
-        model.addAttribute("account", new Accounts());
+        model.addAttribute("account", new Account());
         return "account";
+    }
+
+    @RequestMapping(value = "/account", method = RequestMethod.POST)
+    public String addAmount(Account account, BindingResult result) {
+        if (result.hasErrors()) {
+            return "account";
+        }
+        account.setStatus(Status.INITIATE);
+        accountService.saveAccount(account);
+        return "message";
+    }
+
+    @RequestMapping(value = "/list-account", method = RequestMethod.GET)
+    public String showTodos(ModelMap model) {
+       // String name = getLoggedInUserName(model);
+        model.put("accounts", accountService.getAccounts());
+        return "list-account";
+    }
+
+    @RequestMapping(value = "/approve-account", method = RequestMethod.GET)
+    public String approveAccount(@RequestParam long id) {
+        accountService.updateStatus(id, Status.APPROVED);
+        // service.deleteTodo(id);
+        return "redirect:/list-account";
+    }
+
+    @RequestMapping(value = "/reject-account", method = RequestMethod.GET)
+    public String rejectAccount(@RequestParam long id) {
+        accountService.updateStatus(id, Status.REJECTED);
+        // service.deleteTodo(id);
+        return "redirect:/list-account";
+    }
+
+    @RequestMapping(value = "/delete-account", method = RequestMethod.GET)
+    public String deleteAccount(@RequestParam long id) {
+        accountService.deleteAccount(id);
+        // service.deleteTodo(id);
+        return "redirect:/list-account";
     }
 
 }

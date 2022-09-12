@@ -1,28 +1,27 @@
 package net.guides.springboot.todomanagement.model;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.NonNull;
+import lombok.*;
 import lombok.RequiredArgsConstructor;
 
 import javax.persistence.*;
 import java.util.Date;
 
 @Data
-@RequiredArgsConstructor
-@NoArgsConstructor
 @Entity
-@Table(name = "REJECTED_INFORMATION")
-public class Rejectedinformation {
+@RequiredArgsConstructor
+@Table(name = "COMPLAINT")
+public class Complaint {
+
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private long customerId;
-    @NonNull
-    private String information;
-    @NonNull
+    private long complaintId;
+    private String complaintsTo;
+    private String complaintsFrom;
+    private String subject;
+    private String description;
+    private String complaintsDate;
     private Date createDate;
-    @NonNull
     private Date updateDate;
-    @NonNull
     private String status;
 }
+//Statrus

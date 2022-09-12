@@ -32,4 +32,5 @@ public class LoanPaid {
     private Date createDate;
     @NonNull
     private Date updateDate;
+
 }

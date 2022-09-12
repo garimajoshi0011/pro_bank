@@ -32,4 +32,6 @@ public class LoanAccept {
     private Date createDate;
     @NonNull
     private Date updateDate;
+    @NonNull
+    private String status;
 }

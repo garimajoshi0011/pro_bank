@@ -7,7 +7,7 @@
 				<div class="panel-heading">Add User</div>
 				<div class="panel-body">
 					<form:form method="post" modelAttribute="user">
-						<form:hidden path="customerId" />
+						<form:hidden path="userId" />
 						<fieldset class="form-group">
 							<form:label path="userName">User Name</form:label>
 							<form:input path="userName" type="text" class="form-control"
@@ -31,14 +31,14 @@
 
                                                   <fieldset class="form-group">
                                                                           							<form:label path="phoneNumber">PhoneNumber</form:label>
-                                                                          							<form:input path="phoneNumber" type="phoneNumber" class="form-control"
+                                                                          							<form:input path="phoneNumber" type="text" class="form-control"
                                                                           								required="required" />
                                                                           							<form:errors path="phoneNumber" cssClass="text-warning" />
                                                                           						</fieldset>
 
                                                   <fieldset class="form-group">
                                                                           							<form:label path="address">Address</form:label>
-                                                                          							<form:input path="address" type="address" class="form-control"
+                                                                          							<form:input path="address" type="text" class="form-control"
                                                                           								required="required" />
                                                                           							<form:errors path="address" cssClass="text-warning" />
                                                                           						</fieldset>
@@ -46,29 +46,27 @@
 
                                                   <fieldset class="form-group">
                                                                           							<form:label path="nationality">Nationality</form:label>
-                                                                          							<form:input path="nationality" type="nationality" class="form-control"
+                                                                          							<form:input path="nationality" type="text" class="form-control"
                                                                           								required="required" />
                                                                           							<form:errors path="nationality" cssClass="text-warning" />
                                                                           						</fieldset>
 
                                                   <fieldset class="form-group">
                                                                                                      <form:label path="gender">Gender</form:label>
-                                                                                                     <form:input path="gender" type="gender" class="form-control"
+                                                                                                     <form:input path="gender" type="text" class="form-control"
                                                                                                           required="gender" />
                                                                                                      <form:errors path="gender" cssClass="text-warning" />
                                                                                                    </fieldset>
 
-                                                  <fieldset class="form-group">
-                                                                                                    <form:label path="dob">DOB</form:label>
-                                                                                                    <form:input path="dob" type="dob" class="form-control"
-                                                                                                     required="dob" />
-                                                                                                    <form:errors path="dob" cssClass="text-warning" />
-                                                                                                   </fieldset>
 
-
-
-						<button type="submit" class="btn btn-success">Save</button>
-					</form:form>
+	                                             <fieldset class="form-group">
+							                                                                            <form:label path="dob">Date of Birth</form:label>
+							                                                                            <form:input path="dob" type="date" class="form-control"
+								                                                                            required="required" />
+							                                                                            <form:errors path="dob" cssClass="text-warning" />
+						                                                                                    </fieldset>
+					                	         <button type="submit" class="btn btn-success">Save</button>
+					                                </form:form>
 				</div>
 			</div>
 		</div>

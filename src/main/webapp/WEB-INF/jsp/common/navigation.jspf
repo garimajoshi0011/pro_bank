@@ -4,11 +4,11 @@
 		<ul class="nav navbar-nav">
 			<li class="active"><a href="/">Home</a></li>
 			<li><a href="/list-todos">Todos</a></li>
-			<li><a href="/add-user">User</a></li>
-			<li><a href="/add-complain">Complain</a></li>
-			<li><a href="/account">Account</a></li>
-			<li><a href="/fundtransfer">Fund Transaction</a></li>
-			<li><a href="/loan">Loan</a></li>
+			<li><a href="/list-user">User</a></li>
+			<li><a href="/list-account">Account</a></li>
+			<li><a href="/list-complaint">Complaint</a></li>
+			<li><a href="/list-fundtransfer">Fund Transaction</a></li>
+			<li><a href="/list-loan">Loan</a></li>
 		</ul>
 		<ul class="nav navbar-nav">
 			<li><a href="/logout">Logout</a></li>

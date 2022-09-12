@@ -15,7 +15,14 @@
 							<form:errors path="accountType" cssClass="text-warning" />
 						</fieldset>
 
-					                                              						                                                                  </fieldset>
+
+                       <fieldset class="form-group">
+                                                	<form:label path="balance">Balance</form:label>
+                                                    <form:input path="balance" type="text" class="form-control"
+                                                			required="required" />
+                                                	<form:errors path="balance" cssClass="text-warning" />
+                                                		</fieldset>
+
 
 
 

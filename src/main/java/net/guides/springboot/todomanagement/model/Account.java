@@ -10,19 +10,17 @@ import java.util.Date;
 
 @Data
 @RequiredArgsConstructor
-@NoArgsConstructor
 @Entity
-@Table(name = "REJECTED_INFORMATION")
-public class Rejectedinformation {
+@Table(name = "ACCOUNTS")
+public class Account {
+
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private long customerId;
-    @NonNull
-    private String information;
-    @NonNull
+    private long accountId;
+    private String accountType;
+    private int balance;
     private Date createDate;
-    @NonNull
     private Date updateDate;
-    @NonNull
     private String status;
 }
+//Status

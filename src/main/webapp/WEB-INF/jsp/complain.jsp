@@ -6,7 +6,7 @@
 			<div class="panel panel-primary">
 				<div class="panel-heading">Add User</div>
 				<div class="panel-body">
-					<form:form method="post" modelAttribute="complain">
+					<form:form method="post" modelAttribute="complaintbean">
 						<form:hidden path="complaintId" />
 						<fieldset class="form-group">
 							<form:label path="complaintsTo">Complaints To</form:label>
@@ -23,22 +23,22 @@
                         						</fieldset>
 
                         <fieldset class="form-group">
-                                                	 <form:label path="Subject">Subject</form:label>
+                                                	 <form:label path="subject">Subject</form:label>
                                                 	 <form:input path="subject" type="text" class="form-control"
                                                 		 required="required" />
                                                 	 <form:errors path="subject" cssClass="text-warning" />
                                                  </fieldset>
 
                          <fieldset class="form-group">
-                         							<form:label path="complaint">Complaint</form:label>
-                         							<form:input path="complaint" type="text" class="form-control"
+                         							<form:label path="description">Complaint</form:label>
+                         							<form:input path="description" type="text" class="form-control"
                          								required="required" />
-                         							<form:errors path="complaint" cssClass="text-warning" />
+                         							<form:errors path="description" cssClass="text-warning" />
                          						</fieldset>
 
                           <fieldset class="form-group">
                           							<form:label path="complaintsDate">Complaint Date</form:label>
-                          							<form:input path="complaintsDate" type="text" class="form-control"
+                          							<form:input path="complaintsDate" type="Date" class="form-control"
                           								required="required" />
                           							<form:errors path="complaintsDate" cssClass="text-warning" />
                           						</fieldset>

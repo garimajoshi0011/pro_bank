@@ -1,8 +1,6 @@
 package net.guides.springboot.todomanagement.model;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.NonNull;
+import lombok.*;
 import lombok.RequiredArgsConstructor;
 
 import javax.persistence.*;
@@ -10,15 +8,23 @@ import java.util.Date;
 
 @Data
 @RequiredArgsConstructor
-@NoArgsConstructor
 @Entity
-@Table(name = "REJECTED_INFORMATION")
-public class Rejectedinformation {
+@Table(name = "FUND_TRANSACTION")
+@NoArgsConstructor
+public class FundTransfer {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private long customerId;
+    private long fundTransferId;
     @NonNull
-    private String information;
+    private String debitAccountNumber;
+    @NonNull
+    private String creditAccountNumber;
+    @NonNull
+    private String date;
+    @NonNull
+    private int balance;
+    @NonNull
+    private int amount;
     @NonNull
     private Date createDate;
     @NonNull
