@@ -9,9 +9,9 @@
 					<form:form method="post" modelAttribute="account">
 						<form:hidden path="accountId" />
 						<fieldset class="form-group">
+
 							<form:label path="accountType">Account Type</form:label>
-							<form:input path="accountType" type="text" class="form-control"
-								required="required" />
+						<form:select path="accountType" items="${accountType}"/>
 							<form:errors path="accountType" cssClass="text-warning" />
 						</fieldset>
 

@@ -27,5 +27,7 @@ public class User {
     private Date createDate;
     private Date updateDate;
     private String status;
+    private String userType;
+    private long createdBy;
 
 }

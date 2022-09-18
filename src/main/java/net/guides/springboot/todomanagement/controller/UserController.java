@@ -1,9 +1,6 @@
 package net.guides.springboot.todomanagement.controller;
 
-import net.guides.springboot.todomanagement.model.Loan;
-import net.guides.springboot.todomanagement.model.Todo;
 import net.guides.springboot.todomanagement.model.User;
-import net.guides.springboot.todomanagement.service.ITodoService;
 import net.guides.springboot.todomanagement.service.UserService;
 import net.guides.springboot.todomanagement.util.Status;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +18,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 @Controller
 public class UserController {
@@ -53,8 +52,9 @@ public class UserController {
 	}
 
 	@RequestMapping(value = "/add-user", method = RequestMethod.GET)
-	public String showAddTodoPage(ModelMap model) {
+	public String addUser(ModelMap model) {
 		model.addAttribute("user", new User());
+		updateModel(model);
 		return "user";
 	}
 
@@ -65,6 +65,7 @@ public class UserController {
 		}
 		user.setStatus(Status.INITIATE);
 		userService.saveUser(user);
+		model.addAttribute("message","Record Added Successfully");
 		return "message";
 	}
 	@RequestMapping(value = "/list-user", method = RequestMethod.GET)
@@ -95,20 +96,42 @@ public class UserController {
 		return "redirect:/list-user";
 	}
 
+	@RequestMapping(value = "/view-user", method = RequestMethod.GET)
+	public String viewUser(@RequestParam long id, ModelMap model) {
+		User user = userService.getUserById(id);
+		model.put("user", user);
+		return "viewuser";
+	}
+
 	@RequestMapping(value = "/update-user", method = RequestMethod.GET)
 	public String updateUser(@RequestParam long id, ModelMap model) {
 		User user = userService.getUserById(id);
-		model.put("userbean", user);
+		model.put("user", user);
+		updateModel(model);
 		return "user";
 	}
 
 	@RequestMapping(value = "/update-user", method = RequestMethod.POST)
-	public String updateUser(User user, BindingResult result) {
+	public String updateUser(User user, BindingResult result, ModelMap model) {
 		if (result.hasErrors()) {
 			return "user";
 		}
 		userService.saveUser(user);
+		model.addAttribute("message","Record Updated Successfully");
 		return "message";
+	}
+
+
+	private void updateModel(ModelMap model){
+		Map< String, String > nationality = new HashMap<>();
+		nationality.put("Indian", "Indian");
+
+		Map< String, String > gender = new HashMap<>();
+		gender.put("Male", "Male");
+		gender.put("Female", "Female");
+
+		model.addAttribute("nationality",nationality);
+		model.addAttribute("gender",gender);
 	}
 
 }

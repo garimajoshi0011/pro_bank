@@ -22,16 +22,17 @@ public class FundTransferController {
 	@RequestMapping(value = "/fundtransfer", method = RequestMethod.GET)
 	public String showAddTodoPage(ModelMap model) {
 		model.addAttribute("fundTransfer", new FundTransfer());
-		return "fundTransfer";
+		return "fundtransfer";
 	}
 
 	@RequestMapping(value = "/fundtransfer", method = RequestMethod.POST)
 	public String addFundTransfer(ModelMap model, FundTransfer fundTransfer, BindingResult result) {
 		if (result.hasErrors()) {
-			return "fundTransfer";
+			return "fundtransfer";
 		}
 		fundTransfer.setStatus(Status.INITIATE);
 		fundtransferService.saveFundTransfer(fundTransfer);
+		model.addAttribute("message","Record Added Successfully");
 		return "message";
 	}
 
@@ -39,39 +40,40 @@ public class FundTransferController {
 	public String showTodos(ModelMap model) {
 		// String name = getLoggedInUserName(model);
 		model.put("fundsTransfer", fundtransferService.getfundTransfer());
-		return "list-fundTransfer";
+		return "list-fundtransfer";
 	}
 
 	@RequestMapping(value = "/approve-fundtransfer", method = RequestMethod.GET)
 	public String approveFundTransfer(@RequestParam long id) {
 		fundtransferService.updateStatus(id, Status.APPROVED);
 		// service.deleteTodo(id);
-		return "redirect:/list-fundTransfer";
+		return "redirect:/list-fundtransfer";
 	}
 
-	@RequestMapping(value = "/reject-fundTransfer", method = RequestMethod.GET)
+	@RequestMapping(value = "/reject-fundtransfer", method = RequestMethod.GET)
 	public String rejectFundTransfer(@RequestParam long id) {
 		fundtransferService.updateStatus(id, Status.REJECTED);
 		// service.deleteTodo(id);
-		return "redirect:/list-fundTransfer";
+		return "redirect:/list-fundtransfer";
 	}
 
-	@RequestMapping(value = "/delete-fundTransfer", method = RequestMethod.GET)
+	@RequestMapping(value = "/delete-fundtransfer", method = RequestMethod.GET)
 	public String deleteCFundTransfer(@RequestParam long id) {
 		fundtransferService.deleteFundTransfer(id);
 		// service.deleteTodo(id);
-		return "redirect:/ist-fundTransfer";
+		return "redirect:/list-fundtransfer";
 
 	}
 
-	@RequestMapping(value = "/update-fundTransfer", method = RequestMethod.GET)
+	@RequestMapping(value = "/update-fundtransfer", method = RequestMethod.GET)
 	public String updateFundTransfer(@RequestParam long id, ModelMap model) {
 		FundTransfer fundTransfer = fundtransferService.getfundTransferById(id);
-		model.put("fundTransferbean", fundTransfer);
-		return "fundTransfer";
+		model.put("fundTransfer", fundTransfer);
+		model.addAttribute("message","Record Updated Successfully");
+		return "fundtransfer";
 	}
 
-	@RequestMapping(value = "/update-fundTransfer", method = RequestMethod.POST)
+	@RequestMapping(value = "/update-fundtransfer", method = RequestMethod.POST)
 	public String updateFundTransfer(FundTransfer fundTransfer, BindingResult result) {
 		if (result.hasErrors()) {
 			return "fundTransfer";

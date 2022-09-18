@@ -16,7 +16,7 @@ import java.util.Date;
 public class Rejectedinformation {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private long customerId;
+    private long rejectedinformationId;
     @NonNull
     private String information;
     @NonNull

@@ -3,50 +3,48 @@
 
 <div class="container">
 	<div>
-		<a type="button" class="btn btn-primary btn-md" href="/fundTransfer">Add fundTransfer</a>
+		<a type="button" class="btn btn-primary btn-md" href="/fundtransfer">Add Fund Transfer</a>
 	</div>
 	<br>
 	<div class="panel panel-primary">
 		<div class="panel-heading">
-			<h3>List of TODO's</h3>
+			<h3>List of Fund Transfer's</h3>
 		</div>
 		<div class="panel-body">
 			<table class="table table-striped">
 				<thead>
 					<tr>
-						<th width="10%">Debit Account Number</th>
-						<th width="10%">Credit Account Number</th>
-						<th width="10%">Date</th>
-						<th width="10%">Balance</th>
-						<th width="10%">Amount</th>
-						<th width="10%">Status</th>
-						<th width="40%"></th>
+						<th width="12%">Debit Account Number</th>
+						<th width="16%">Transfer Amount</th>
+						<th width="14%">Date</th>
+						<th width="14%">Balance</th>
+						<th width="14%">Status</th>
+						<th width="30%"></th>
 					</tr>
 				</thead>
 				<tbody>
 					<c:forEach items="${fundsTransfer}" var="fundTransfer">
 						<tr>
 							<td>${fundTransfer.debitAccountNumber}</td>
-							<td>${fundTransfer.creditAccountNumber}</td>
+							<td>${fundTransfer.transferAmount}</td>
 							<td>${fundTransfer.date}</td>
 							<td>${fundTransfer.balance}</td>
-							<td>${fundTransfer.amount}</td>
 							<td>${fundTransfer.status}</td>
 
 
 
 						<td>
 						<a type="button" class="btn btn-success"
-                        href="/approve-fundTransfer?id=${fundTransfer.fundTransferId}">Approve</a>
+                        href="/approve-fundtransfer?id=${fundTransfer.fundTransferId}">Approve</a>
 
 						<a type="button" class="btn btn-success"
-						href="/reject-fundTransfer?id=${fundTransfer.fundTransferId}">Reject</a>
+						href="/reject-fundtransfer?id=${fundTransfer.fundTransferId}">Reject</a>
 
 						<a type="button" class="btn btn-success"
-						href="/update-fundTransfer?id=${fundTransfer.fundTransferId}">Update</a>
+						href="/update-fundtransfer?id=${fundTransfer.fundTransferId}">Update</a>
 
 						<a type="button" class="btn btn-warning"
-						href="/delete-fundTransfer?id=${fundTransfer.fundTransferId}">Delete</a></td>
+						href="/delete-fundtransfer?id=${fundTransfer.fundTransferId}">Delete</a></td>
 						</tr>
 					</c:forEach>
 				</tbody>

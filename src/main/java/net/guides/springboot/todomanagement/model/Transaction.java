@@ -16,8 +16,6 @@ public class Transaction {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private long customerId;
-    @NonNull
     private int transactionId;
     @NonNull
     private int transactionType;

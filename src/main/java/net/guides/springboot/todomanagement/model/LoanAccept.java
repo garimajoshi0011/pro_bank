@@ -15,7 +15,7 @@ public class LoanAccept {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private long customerId;
+    private long loanAccepId;
     @NonNull
     private String loanId;
     @NonNull

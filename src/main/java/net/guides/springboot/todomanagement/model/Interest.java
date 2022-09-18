@@ -14,7 +14,7 @@ public class Interest {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private long customerId;
+    private long interestId;
     @NonNull
     private String accountNumber;
     @NonNull

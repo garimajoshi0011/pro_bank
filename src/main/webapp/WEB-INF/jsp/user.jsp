@@ -46,15 +46,13 @@
 
                                                   <fieldset class="form-group">
                                                                           							<form:label path="nationality">Nationality</form:label>
-                                                                          							<form:input path="nationality" type="text" class="form-control"
-                                                                          								required="required" />
+                                                                          							<form:select path="nationality" items="${nationality}"/>
                                                                           							<form:errors path="nationality" cssClass="text-warning" />
                                                                           						</fieldset>
 
                                                   <fieldset class="form-group">
                                                                                                      <form:label path="gender">Gender</form:label>
-                                                                                                     <form:input path="gender" type="text" class="form-control"
-                                                                                                          required="gender" />
+                                                                                                     <form:select path="gender" items="${gender}"/>
                                                                                                      <form:errors path="gender" cssClass="text-warning" />
                                                                                                    </fieldset>
 

@@ -15,7 +15,7 @@ import java.util.Date;
 public class Loantype {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private long customerId;
+    private long loantypeId;
     @NonNull
     private String loanType;
     @NonNull

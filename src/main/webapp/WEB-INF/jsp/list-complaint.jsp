@@ -3,22 +3,22 @@
 
 <div class="container">
 	<div>
-		<a type="button" class="btn btn-primary btn-md" href="/add-complaint">Add Complaint</a>
+		<a type="button" class="btn btn-primary btn-md" href="/addcomplaint">Add Complaint</a>
 	</div>
 	<br>
 	<div class="panel panel-primary">
 		<div class="panel-heading">
-			<h3>List of TODO's</h3>
+			<h3>List of Complain's</h3>
 		</div>
 		<div class="panel-body">
 			<table class="table table-striped">
 				<thead>
 					<tr>
-						<th width=" 10%">Complaints To</th>
-						<th width="10%">Complaints From</th>
+						<th width="10%">Complaint Type</th>
 						<th width="10%">Subject</th>
+						<th width="10%">From</th>
 						<th width="10">Description</th>
-						<th width="10%">Complain Date</th>
+						<th width="10%"> Date</th>
 						<th width="10%">Status</th>
 						<th width="40%"></th>
 					</tr>
@@ -26,11 +26,11 @@
 				<tbody>
 					<c:forEach items="${complaints}" var="complaint">
 						<tr>
-							<td>${complaint.complaintsTo}</td>
-							<td>${complaint.complaintsFrom}</td>
+							<td>${complaint.complaintType}</td>
 							<td>${complaint.subject}</td>
 							<td>${complaint.description}</td>
-							<td>${complaint.complaintsDate}</td>
+							<td>${complaint.complaintFrom}</td>
+							<td>${complaint.complaintDate}</td>
 							<td>${complaint.status}</td>
 							<td>
 							<a type="button" class="btn btn-success"

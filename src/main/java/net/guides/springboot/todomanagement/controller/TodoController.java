@@ -4,6 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 
+import net.guides.springboot.todomanagement.model.MyUserDetail;
 import net.guides.springboot.todomanagement.service.TodoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -45,8 +46,8 @@ public class TodoController {
 	private String getLoggedInUserName(ModelMap model) {
 		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 
-		if (principal instanceof UserDetails) {
-			return ((UserDetails) principal).getUsername();
+		if (principal instanceof MyUserDetail) {
+			return ((MyUserDetail) principal).getUsername();
 		}
 
 		return principal.toString();

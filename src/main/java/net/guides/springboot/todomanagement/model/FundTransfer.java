@@ -9,7 +9,7 @@ import java.util.Date;
 @Data
 @RequiredArgsConstructor
 @Entity
-@Table(name = "FUND_TRANSACTION")
+@Table(name = "FUND_TRANSFER")
 @NoArgsConstructor
 public class FundTransfer {
     @Id
@@ -18,17 +18,16 @@ public class FundTransfer {
     @NonNull
     private String debitAccountNumber;
     @NonNull
-    private String creditAccountNumber;
-    @NonNull
     private String date;
     @NonNull
     private int balance;
-    @NonNull
-    private int amount;
     @NonNull
     private Date createDate;
     @NonNull
     private Date updateDate;
     @NonNull
+    private int transferAmount;
+    @NonNull
     private String status;
+    private long customerId;
 }

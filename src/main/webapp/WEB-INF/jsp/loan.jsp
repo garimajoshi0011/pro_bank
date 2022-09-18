@@ -4,15 +4,15 @@
 	<div class="row">
 		<div class="col-md-6 col-md-offset-3 ">
 			<div class="panel panel-primary">
-				<div class="panel-heading">Add User</div>
+				<div class="panel-heading">Add Loan</div>
 				<div class="panel-body">
 					<form:form method="post" modelAttribute="loan">
-						<form:hidden path="customerId" />
+						<form:hidden path="loanId" />
+
 
 						<fieldset class="form-group">
 							<form:label path="loanType">Loan Type</form:label>
-							<form:input path="loanType" type="text" class="form-control"
-								required="required" />
+							 <form:select path="loanType" items="${loantype}"/>
 							<form:errors path="loanType" cssClass="text-warning" />
 						</fieldset>
 
@@ -24,9 +24,8 @@
                         				</fieldset>
 
                         <fieldset class="form-group">
-                            <form:label path="duration">Duration</form:label>
-                                <form:input path="duration" type="text" class="form-control"
-                                  required="required" />
+                            <form:label path="duration">Duration (In Years)</form:label>
+                                   <form:select path="duration" items="${duration}"/>
                                 <form:errors path="duration" cssClass="text-warning" />
                                       </fieldset>
 
@@ -74,12 +73,6 @@
                       <form:errors path="requestDate" cssClass="text-warning" />
                                </fieldset>
 
-                     <fieldset class="form-group">
-                     <form:label path="status">status</form:label>
-                     <form:input path="status" type="text" class="form-control"
-                       required="required" />
-                     <form:errors path="status" cssClass="text-warning" />
-                               </fieldset>
 
 
 

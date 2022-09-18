@@ -8,57 +8,52 @@
 	<br>
 	<div class="panel panel-primary">
 		<div class="panel-heading">
-			<h3>List of TODO's</h3>
+			<h3>List of Loan's</h3>
 		</div>
 		<div class="panel-body">
 			<table class="table table-striped">
 				<thead>
 					<tr>
-						<th width="8%">Loan Type</th>
-						<th width="8%">Loan Amount</th>
-						<th width="8%">Duration</th>
-						<th width="8%">Name</th>
-						<th width="8%">Address</th>
-						<th width="8%">Income</th>
-						<th width="8%">Phone Number</th>
-						<th width="8%">Email</th>
-						<th width="8%">Profession</th>
-						<th width="8%">Request Date</th>
-						<th width="8%">Status</th>
-						<th width="12%"></th>
+					    <th width="10%">Name</th>
+						<th width="10%">Type</th>
+						<th width="10%">Amount</th>
+						<th width="10%">Duration</th>
+						<th width="10%">Income</th>
+						<th width="10%">Date</th>
+						<th width="10%">Status</th>
+						<th width="30%"></th>
 					</tr>
 				</thead>
 				<tbody>
 					<c:forEach items="${loans}" var="loan">
 						<tr>
+						    <td><a href="/view-loan?id=${loan.loanId}">${loan.name}</td>
 							<td>${loan.loanType}</td>
-							<td>${account.loanAmount}</td>
-							<td>${account.duration}</td>
-							<td>${account.name}</td>
-							<td>${account.address}</td>
-							<td>${account.income}</td>
-							<td>${account.phoneNumber}</td>
-							<td>${account.email}</td>
-							<td>${account.profession}</td>
-							<td>${account.requestDate}</td>
-							<td>${account.status}</td>
+							<td>${loan.loanAmount}</td>
+							<td>${loan.duration}</td>
+							<td>${loan.income}</td>
+							<td>${loan.requestDate}</td>
+							<td>${loan.status}</td>
 
-
-
-							<td>
+<td>
 							<a type="button" class="btn btn-success"
                             href="/approve-loan?id=${loan.loanId}">Approve</a>
 
 							<a type="button" class="btn btn-success"
-							href="/reject-loan?id=${loan.loanId}">Reject</a>
+							 href="/reject-loan?id=${loan.loanId}">Reject</a>
 
 							<a type="button" class="btn btn-success"
 								href="/update-loan?id=${loan.loanId}">Update</a>
 
 							<a type="button" class="btn btn-warning"
 								href="/delete-loan?id=${loan.loanId}">Delete</a></td>
-						</tr>
-					</c:forEach>
+								</tr>
+</c:forEach>
+
+
+
+
+
 				</tbody>
 			</table>
 		</div>

@@ -17,6 +17,7 @@ public class Account {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private long accountId;
+    private long customerId;
     private String accountType;
     private int balance;
     private Date createDate;

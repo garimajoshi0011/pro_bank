@@ -37,11 +37,12 @@ public class Loan {
     private String profession;
     @NonNull
     private String requestDate;
-    @NonNull
     private String status;
     @NonNull
     private Date createDate;
     @NonNull
     private Date updateDate;
+    private long customerId;
+
 
 }

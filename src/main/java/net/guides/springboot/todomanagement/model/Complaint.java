@@ -11,15 +11,14 @@ import java.util.Date;
 @RequiredArgsConstructor
 @Table(name = "COMPLAINT")
 public class Complaint {
-
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private long complaintId;
-    private String complaintsTo;
-    private String complaintsFrom;
+    private String complaintType;
+    private String complaintFrom;
     private String subject;
     private String description;
-    private String complaintsDate;
+    private String complaintDate;
     private Date createDate;
     private Date updateDate;
     private String status;

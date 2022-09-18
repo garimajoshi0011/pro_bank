@@ -9,7 +9,7 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "USERS")
+@Table(name = "LOGIN")
 @Data
 @RequiredArgsConstructor
 @NoArgsConstructor
@@ -17,7 +17,7 @@ public class Login {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private long CustomerId;
+    private long LoginId;
     @NonNull
     private String userName;
     @NonNull
