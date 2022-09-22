@@ -10,10 +10,26 @@ import javax.servlet.http.HttpServletResponse;
 @Controller
 public class HomePageController {
 
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public String homepage(HttpServletRequest request,
+                        HttpServletResponse response) {
+        System.out.println("Hi");
+        //Authentication authentication = SecurityContextHolder.getContext()
+        //.getAuthentication();
+
+        //if (authentication != null) {
+        //	new SecurityContextLogoutHandler().logout(request, response,
+        //			authentication);
+        //loginlogin}
+
+        return "homepage";
+    }
+
+
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String login(HttpServletRequest request,
                         HttpServletResponse response) {
-
+        System.out.println("Hi");
         //Authentication authentication = SecurityContextHolder.getContext()
         //.getAuthentication();
 
@@ -25,5 +41,19 @@ public class HomePageController {
         return "login";
     }
 
+    @RequestMapping(value = "/redirect", method = RequestMethod.GET)
+    public String redirect(HttpServletRequest request,
+                        HttpServletResponse response) {
+        System.out.println("Hi mredirect");
+        //Authentication authentication = SecurityContextHolder.getContext()
+        //.getAuthentication();
+
+        //if (authentication != null) {
+        //	new SecurityContextLogoutHandler().logout(request, response,
+        //			authentication);
+        //loginlogin}
+
+        return "login";
+    }
 
 }
