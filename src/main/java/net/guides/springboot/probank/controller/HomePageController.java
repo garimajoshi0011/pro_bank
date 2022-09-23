@@ -56,4 +56,10 @@ public class HomePageController {
         return "login";
     }
 
+    @RequestMapping(value = "/calculator", method = RequestMethod.GET)
+    public String caculator() {
+        System.out.println("Hi");
+        return "InterestCalculator";
+    }
 }
+

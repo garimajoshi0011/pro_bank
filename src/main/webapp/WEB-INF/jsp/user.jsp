@@ -62,7 +62,21 @@
 							                                                                            <form:input path="dob" type="date" class="form-control"
 								                                                                            required="required" />
 							                                                                            <form:errors path="dob" cssClass="text-warning" />
+
 						                                                                                    </fieldset>
+						                         <fieldset class="form-group">
+                                                 							                             <form:label path="adharnumber">Adhar Number</form:label>
+                                                 							                             <form:input path="adharnumber" type="text" class="form-control"
+                                                 								                           required="required" />
+                                                 							                              <form:errors path="dob" cssClass="text-warning" />
+                                                 						                                       </fieldset>
+
+                                                <fieldset class="form-group">
+                                                							                              <form:label path="pannumber">Pan Number</form:label>
+                                                							                              <form:input path="pannumber" type="text" class="form-control"
+                                                								                                required="required" />
+                                                							                              <form:errors path="pannumber" cssClass="text-warning" />
+                                                						                                            </fieldset>
 					                	         <button type="submit" class="btn btn-success">Save</button>
 					                                </form:form>
 				</div>

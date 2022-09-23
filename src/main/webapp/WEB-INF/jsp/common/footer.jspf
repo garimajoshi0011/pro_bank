@@ -7,11 +7,9 @@
 		format : 'dd/mm/yyyy'
 	});
 </script>
-
-
  <section class="container-fluid footer_section">
     <p>
-     Project Developed By Garima Joshi
+     Project Developed By Prolifics Corporation Pvt. Ltd.
     </p>
   </section>
 </body>

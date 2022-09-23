@@ -665,13 +665,193 @@ border-radius: 20px;
         <p>Banking for all "Aao Sochein Bada"</p>
         <p>Working for a better tomorrow 'Hum Hai na'</p>
         <a type="button" href="/signin" class="btn">Create Account</a>
+        <br/>
+        <a type="button" href="/calculator" class="btn">Calculate Interest</a>
     </div>
 
     <div class="image">
-        <img src="images/home5.jpg" alt="">
+        <img src="https://drive.google.com/uc?export=view&id=1F9Ukd58WyHxfpCs3w741_ymwtiGfemG9" alt="">
     </div>
 
 </section>
+
+<section class="loans" id="loans">
+
+    <h1 class="heading"> LOANS </h1>
+
+    <div class="box-container">
+    <div class="row1">
+        <div class="box">
+            <img src="https://drive.google.com/uc?export=view&id=1Cx1ATEi-qwu7H2nlTw0xQtTE-ARyyLpH" alt="">
+            <h3>HOME LOAN</h3>
+            <p>Home loans are a secured mode of finance that give you the funds to buy or build the home of your choice.
+                You for a home loan at lower interest rates.</p>
+            <a href="#" class="row1btn">Read more</a>
+        </div>
+
+        <div class="box">
+            <img src="https://drive.google.com/uc?export=view&id=1QzciySwGHQO5GkZWuQW3vfZG_GAJfHZj" alt="">
+            <h3>GOLD LOAN</h3>
+            <p> A gold loan requires you to pledge gold jewellery or coins as collateral.
+                The loan amount sanctioned is a certain percentage of the gold's value pledged.</p>
+            <a href="#" class="row1btn" >Read more</a>
+        </div>
+
+        <div class="box">
+            <img src="https://drive.google.com/uc?export=view&id=1N7C80U53PU97A4gv1BsOr3AFEl7aQPfl" alt="">
+            <h3>PERSONAL LOAN</h3>
+            <p> Personal loans can be used for the purposes unplanned and urgent expenses, like expenses of a family wedding,
+                Pay for a vacation or an international trip, etc.</p>
+            <a href="#" class="row1btn">Read more</a>
+        </div>
+    </div>
+
+    <div class="row2">
+        <div class="box">
+            <img src="https://drive.google.com/uc?export=view&id=1Nzc7yhnKoKnUAEkq5FKAosFZkoj5HTU-" alt="">
+            <h3>BUSINESS LOAN</h3>
+            <p>Business loan can be used to organisations expansion like Working capital loans, Machinery loans, equipment finance,
+                Loans for manufacturers, etc.</p>
+            <a href="#" class="row1btn">Read more</a>
+        </div>
+
+        <div class="box">
+            <img src="https://drive.google.com/uc?export=view&id=1hRafXaEO6hJuHLLieYLVOTIAVkXtyHPc" alt="">
+            <h3>EDUCATION LOAN</h3>
+            <p>Education loan covers the course's basic fees and allied expenses.
+                An education loan can be taken for a graduation and post-graduation course.</p>
+            <a href="#" class="row1btn">Read more</a>
+        </div>
+
+        <div class="box">
+            <img src="https://drive.google.com/uc?export=view&id=1WBP1_N956jlEHjpbUBQpA37Mxc2V4G-J" alt="">
+            <h3>VEHICLE LOAN</h3>
+            <p>A vehicle loan is extended in the form of a two or four-wheeler loan. Vehicle loan helps helps you buy your dream vehicle
+                with a good interest rates.</p>
+            <a href="#" class="row1btn">Read more</a>
+        </div>
+    </div>
+    </div>
+
+</section>
+<section class="services" id="services">
+
+    <h1 class="heading">SERVICES</h1>
+
+    <div class="column">
+
+        <div class="image">
+            <img src="https://drive.google.com/uc?export=view&id=1JJUiHGd4WyFB72Vx9TuTTsT4-zICJPGq" style="margin-top: 60px; border-radius:20px; height: 900px; width: 1200px; display: block; margin-left: auto; margin-right: auto;">
+        </div>
+
+    </div>
+
+</section>
+<!-- services section ends -->
+
+<!-- about section starts  -->
+<section class="about" id="about">
+
+    <h1 class="heading">About</h1>
+
+    <div class="column">
+
+        <div class="image">
+            <img src="https://drive.google.com/uc?export=view&id=1ZNNk-jMJmjok-QMYtyX92aPZSCWnb0BR" style="margin-top: 100px; margin-bottom: 50px; border-radius: 50px;">
+        </div>
+
+        <div class="content">
+            <h3>Your Right and Perfect Banking Partner</h3>
+            <p></p>
+            <p></p>
+        </div>
+
+    </div>
+
+</section>
+<!-- about section ends -->
+
+<!-- contact section starts  -->
+<section class="contact" id="contact">
+
+    <form action="">
+
+        <h1 class="heading">contact us</h1>
+
+        <div class="inputBox">
+            <input type="text" required>
+            <label>name</label>
+        </div>
+
+        <div class="inputBox">
+            <input type="email" required>
+            <label>email</label>
+        </div>
+
+        <div class="inputBox">
+            <input type="number" required>
+            <label>phone</label>
+        </div>
+
+        <div class="inputBox">
+            <textarea required name="" id="" cols="30" rows="10"></textarea>
+            <label>message</label>
+        </div>
+
+        <input type="submit" class="btn" value="send message">
+
+    </form>
+
+    <div class="image">
+        <img src="https://drive.google.com/uc?export=view&id=1GYc3Wu8GMLkNJC8HqGBxlOx0KxL-jua0" alt="">
+    </div>
+
+</section>
+<!-- contact section ends -->
+
+<!-- footer section starts  -->
+<div class="footer">
+
+    <div class="box-container">
+
+        <div class="box">
+            <h3>about us</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet pariatur rerum consectetur architecto ad tempora blanditiis quo aliquid inventore a.</p>
+        </div>
+
+        <div class="box">
+            <h3>quick links</h3>
+            <a href="#home">home</a>
+            <a href="#loans">loans</a>
+            <a href="#services">services</a>
+            <a href="#about">about</a>
+            <a href="#contact">contact</a>
+        </div>
+
+        <div class="box">
+            <h3>follow us</h3>
+            <a href="https://www.facebook.com/">facebook</a>
+            <a href="https://www.instagram.com/">instagram</a>
+            <a href="https://twitter.com/i/flow/login">twitter</a>
+        </div>
+
+        <div class="box">
+            <h3>contact info</h3>
+            <div class="info">
+               <!-- <i class="fas fa-phone"></i> -->
+                <p> +91 8787237320 <br> +91 8989234567 </p>
+            </div>
+            <div class="info">
+                <!-- <i class="fas fa-envelope"></i> -->
+                <p> alltimeprobank@gmail.com <br> chooseprobank@gmail.com </p>
+            </div>
+            <div class="info">
+                <!-- <i class="fas fa-map-marker-alt"></i> -->
+                <p> Hyderabad, India </p>
+            </div>
+        </div>
+</div>
+</div>
 
 <body>
 </html>

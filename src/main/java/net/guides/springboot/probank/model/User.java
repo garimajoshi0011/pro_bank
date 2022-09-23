@@ -28,5 +28,7 @@ public class User {
     private String status;
     private String userType;
     private long createdBy;
+    private String adharnumber;
+    private String pannumber;
 
 }
